@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Horizontal option steps in CSS3</title>
-    <link rel="stylesheet" href="./steps.css">
   </head>
   <body>
     <!-- Level 1-->
@@ -347,4 +346,15 @@
       </div>
     </div>
   </body>
+  <script type="text/javascript">
+    var cb = function() {
+        var l = document.createElement('link');
+        l.rel = 'stylesheet';
+        l.href = 'steps.css';
+        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+    };
+    var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+    if (raf) raf(cb);
+    else window.addEventListener('load', cb);
+  </script>
 </html>
