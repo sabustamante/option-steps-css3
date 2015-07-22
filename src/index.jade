@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title Horizontal option steps in CSS3
+        link(rel='stylesheet', href='./steps.css')
+    body
+        // Level 1
+        .option-steps-container
+            each i in ['1', '2', '3']
+                input.option-steps-input(type='checkbox', id='step-' + i, name='step-i', value=i, checked)
+            .option-steps
+                each i in ['1', '2', '3']
+                    .option-step
+                        label(for='step-' + i)= 'Step ' + i
+                        
+                        // Level 2
+                        .option-steps-container
+                            each j in ['1', '2', '3']
+                                input.option-steps-input(type='checkbox', id='step-' + i + j, name='step-j', value=i + j, checked)
+                            .option-steps
+                                each j in ['1', '2', '3']
+                                    .option-step
+                                        label(for='step-' + i + j)= 'Step ' + i + j
+                                        
+                                        // Level 3
+                                        .option-steps-container
+                                            each k in ['1', '2', '3']
+                                                input.option-steps-input(type='checkbox', id='step-' + i + j + k, name='step-k', value=i + j + k, checked)
+                                            .option-steps
+                                                each k in ['1', '2', '3']
+                                                    .option-step
+                                                        label(for='step-' + i + j + k)= 'Step ' + i + j + k
+                                                        .option-steps-container
+                                                            p= 'End ' + i + j + k

@@ -1,0 +1,34 @@
+.option-steps {
+  transition: transform 0.4s; }
+  .option-steps-input {
+    display: none; }
+  .option-steps-container {
+    overflow: hidden; }
+    .option-steps-container .option-steps-container {
+      display: none;
+      transform: translateX(100%); }
+    .option-steps-container > .option-steps-input:not(:checked) ~ .option-steps > .option-step {
+      display: none !important; }
+      .option-steps-container > .option-steps-input:not(:checked) ~ .option-steps > .option-step > label {
+        display: none; }
+      .option-steps-container > .option-steps-input:not(:checked) ~ .option-steps > .option-step > .option-steps-container {
+        display: block; }
+    .option-steps-container > .option-steps-input:nth-child(1):not(:checked) ~ .option-steps > .option-step:nth-child(1) {
+      display: block !important;
+      transform: translateX(-100%); }
+    .option-steps-container > .option-steps-input:nth-child(2):not(:checked) ~ .option-steps > .option-step:nth-child(2) {
+      display: block !important;
+      transform: translateX(-100%); }
+    .option-steps-container > .option-steps-input:nth-child(3):not(:checked) ~ .option-steps > .option-step:nth-child(3) {
+      display: block !important;
+      transform: translateX(-100%); }
+
+.option-step {
+  transition: transform 0.4s; }
+  .option-step > label {
+    border-top: 1px solid #ddd;
+    cursor: pointer;
+    display: block;
+    padding: 10px; }
+  .option-step:last-child > label {
+    border-bottom: 1px solid #ddd; }

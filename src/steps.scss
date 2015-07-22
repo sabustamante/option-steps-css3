@@ -1,0 +1,58 @@
+// Steps
+// -----------------------------------------------------------------------------
+
+.option {
+    &-steps {
+        transition: transform .4s;
+
+        &-input {
+            display: none;
+        }
+        &-container {
+            overflow: hidden;
+
+            .option-steps-container {
+                display: none;
+                transform: translateX(100%);
+            }
+
+            > .option-steps-input {
+
+                &:not(:checked) ~ .option-steps > .option-step {
+                    display: none!important;
+
+                    > label {
+                        display: none;
+                    }
+                    > .option-steps-container {
+                        display: block;
+                    }
+                }
+
+                @for $i from 1 through 3 {
+                    &:nth-child(#{$i}):not(:checked) ~ .option-steps {
+                        > .option-step {
+                            &:nth-child(#{$i}) {
+                                display: block!important;
+                                transform: translateX(-100%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-step {
+        transition: transform .4s;
+
+        > label {
+            border-top: 1px solid #ddd;
+            cursor: pointer;
+            display: block;
+            padding: 10px;
+        }
+        &:last-child > label {
+            border-bottom: 1px solid #ddd;
+        }
+    }
+}
